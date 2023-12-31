@@ -1,0 +1,213 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <!-- Required meta tags -->
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+
+    <!-- Bootstrap CSS -->
+    <link
+      href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/css/bootstrap.min.css"
+      rel="stylesheet"
+      integrity="sha384-EVSTQN3/azprG1Anm3QDgpJLIm9Nao0Yz1ztcQTwFspd3yD65VohhpuuCOmLASjC"
+      crossorigin="anonymous"
+    />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.2/font/bootstrap-icons.min.css"
+    />
+
+    <title>TASK SNAP</title>
+  </head>
+  <body>
+    <div class="container">
+      <!-- navbar -->
+      <nav class="navbar">
+        <div class="container-fluid">
+          <a class="navbar-brand">
+            <i class="bi bi-app-indicator"></i><span> </span>TASK SNAP</a
+          >
+          <form class="d-flex">
+            <button class="btn login-btn" id="login-btn" type="submit">
+              LOGIN
+            </button>
+            <button class="btn signup-btn" type="submit" id="signup-btn">
+              SIGN UP
+            </button>
+          </form>
+        </div>
+      </nav>
+      <!-- navbar end -->
+      <!-- tasks -->
+      <div id="taskContainer" class="container">
+        <!-- dymaniccly task cards added here  -->
+      </div>
+
+      <!-- task end -->
+      <!-- task model  -->
+      <!-- Modal -->
+      <div
+        class="modal fade"
+        id="addTaskModal"
+        tabindex="-1"
+        aria-labelledby="exampleModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="exampleModalLabel">Add Task</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- Task form -->
+              <form id="addTaskForm">
+                <div class="mb-3">
+                  <label for="taskName" class="form-label">Task Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="taskName"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="taskDescription" class="form-label"
+                    >Task Description</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="taskDescription"
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="totalHours" class="form-label">Total Hours</label>
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="totalHours"
+                    required
+                  />
+                </div>
+                <button type="submit" class="btn btn-primary fw-bold">
+                  SAVE
+                </button>
+              </form>
+              <!-- End Task form -->
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <!-- task model end -->
+      <div class="mt-5 text-center">
+        <form id="addTaskForm">
+          <button
+            type="submit"
+            class="btn btn-primary signup-btn"
+            data-bs-toggle="modal"
+            data-bs-target="#addTaskModal"
+          >
+            <i class="bi bi-plus-square" id="addSubmit"></i> ADD TASKS
+          </button>
+        </form>
+      </div>
+      <!-- Edit Task Modal -->
+      <div
+        class="modal fade"
+        id="editTaskModal"
+        tabindex="-1"
+        aria-labelledby="editTaskModalLabel"
+        aria-hidden="true"
+      >
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title" id="editTaskModalLabel">Edit Task</h5>
+              <button
+                type="button"
+                class="btn-close"
+                data-bs-dismiss="modal"
+                aria-label="Close"
+              ></button>
+            </div>
+            <div class="modal-body">
+              <!-- Task form for editing -->
+              <form id="editTaskForm">
+                <input type="hidden" id="editTaskId" />
+                <div class="mb-3">
+                  <label for="editTaskName" class="form-label">Task Name</label>
+                  <input
+                    type="text"
+                    class="form-control"
+                    id="editTaskName"
+                    required
+                  />
+                </div>
+                <div class="mb-3">
+                  <label for="editTaskDescription" class="form-label"
+                    >Task Description</label
+                  >
+                  <textarea
+                    class="form-control"
+                    id="editTaskDescription"
+                    rows="3"
+                    required
+                  ></textarea>
+                </div>
+                <div class="mb-3">
+                  <label for="editTotalHours" class="form-label"
+                    >Total Hours</label
+                  >
+                  <input
+                    type="number"
+                    class="form-control"
+                    id="editTotalHours"
+                    required
+                  />
+                </div>
+                <button
+                  type="submit"
+                  class="btn btn-primary fw-bold"
+                  data-bs-dismiss="modal"
+                >
+                  SAVE CHANGES
+                </button>
+              </form>
+              <!-- End Task form -->
+            </div>
+          </div>
+        </div>
+      </div>
+      <!-- end -->
+    </div>
+
+    <!-- Option 1: Bootstrap Bundle with Popper -->
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.bundle.min.js"
+      integrity="sha384-MrcW6ZMFYlzcLA8Nl+NtUVF0sA7MsXsP1UyJoMp4YLEuNSfAP+JcXn/tWtIaxVXM"
+      crossorigin="anonymous"
+    ></script>
+
+    <script
+      src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.9.2/dist/umd/popper.min.js"
+      integrity="sha384-IQsoLXl5PILFhosVNubq5LC7Qb9DXgDA9i+tQ8Zj3iwWAwPtgFTxbJ8NT4GN1R8p"
+      crossorigin="anonymous"
+    ></script>
+    <script
+      src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.2/dist/js/bootstrap.min.js"
+      integrity="sha384-cVKIPhGWiC2Al4u+LWgxfKTRIcfu0JTxR+EQDz/bgldoEyl4H0zUF0QKbrJ0EcQF"
+      crossorigin="anonymous"
+    ></script>
+
+    <script src="script.js"></script>
+  </body>
+</html>

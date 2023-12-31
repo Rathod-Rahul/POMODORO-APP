@@ -1,0 +1,66 @@
+@import url("https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Roboto:wght@400;700&display=swap");
+
+:root {
+  --p-color: #22c55e;
+  --s-color: #3b82f6;
+  --t-color: #ef4444;
+  --text-color: #ffffff;
+}
+body {
+  font-family: "Poppins", sans-serif;
+  font-family: "Roboto", sans-serif;
+  border-style: none !important;
+}
+.login-btn {
+  background-color: var(--s-color);
+  color: var(--text-color);
+  font-weight: bolder;
+  margin-right: 15px;
+  padding-left: 15px;
+  text-align: center;
+}
+.login-btn:hover {
+  background-color: var(--s-color);
+  color: var(--text-color);
+}
+.signup-btn {
+  background-color: var(--p-color);
+  color: var(--text-color);
+  font-weight: bolder;
+}
+.signup-btn:hover {
+  background-color: var(--p-color);
+  color: var(--text-color);
+}
+.navbar-brand {
+  color: black;
+  font-weight: bolder;
+  font-size: xx-large;
+}
+.navbar-brand:hover {
+  color: black;
+  font-weight: bolder;
+  font-size: xx-large;
+}
+
+.st-btn {
+  background-color: var(--s-color);
+  color: var(--text-color);
+  font-weight: bolder;
+  margin-right: 15px;
+}
+.st-btn:hover {
+  background-color: var(--s-color);
+  color: var(--text-color);
+  font-weight: bolder;
+}
+.op-btn {
+  background-color: var(--t-color);
+  color: var(--text-color);
+  font-weight: bolder;
+}
+.op-btn:hover {
+  background-color: var(--t-color);
+  color: var(--text-color);
+  font-weight: bolder;
+}
